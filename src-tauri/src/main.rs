@@ -4,14 +4,19 @@
 use std::process::Command;
 use std::env::consts::ARCH;
 use std::env::consts::OS;
+use std::path::Path;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn decode(app: tauri::AppHandle, name: &str, is_dir: bool) -> String {
-    let binary_path = app.path_resolver()
-        .resolve_resource("binary")
+    let binary = Path::new("binary")
+        .join(OS)
+        .join(ARCH)
+        .join(if OS == "windows" { "decode_log_file.exe" } else { "decode_log_file" });
+    let path = app.path_resolver()
+        .resolve_resource(binary)
         .expect("failed to resolve resource dir");
-    Command::new(format!("{}/{}/{}/decode_log_file", binary_path.as_path().to_str().unwrap(), OS, ARCH))
+    Command::new(path)
         .arg(name)
         .spawn()
         .expect("Failed to execute decode_log_file");
