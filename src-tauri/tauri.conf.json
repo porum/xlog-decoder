@@ -68,9 +68,11 @@
         "fullscreen": false,
         "resizable": false,
         "title": "xlog-decoder",
-        "width": 800,
-        "height": 600,
-        "center": true
+        "width": 320,
+        "height": 360,
+        "center": true,
+        "fileDropEnabled": true,
+        "decorations": true
       }
     ]
   }
