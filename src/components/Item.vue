@@ -3,6 +3,7 @@
 import { ref, watch } from "vue"
 import { basename, join, resolveResource } from "@tauri-apps/api/path";
 import { invoke } from "@tauri-apps/api";
+import { createDir, exists } from "@tauri-apps/api/fs";
 
 const props = defineProps({
   path: {
@@ -35,9 +36,12 @@ watch(() => props.path, async (newValue, _) => {
 const decode = async (): Promise<number> => {
   const customDistPath = localStorage.getItem("dist")
   let distPath: string
-  if (!resolvedPath.value.endsWith(".xlog")) { // dir not support specify dist path
+  if (!resolvedPath.value.endsWith(".xlog")) { // dir not support custom dist path
     distPath = ""
-  } else if (customDistPath) { // custom dist path exist
+  } else if (customDistPath) { // custom dist path
+    if (!await exists(customDistPath)) {
+      await createDir(customDistPath)
+    }
     distPath = await join(customDistPath, `${name.value}.log`)
   } else { // default dist path
     distPath = `${props.path}.log`
