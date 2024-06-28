@@ -19,6 +19,8 @@
     "less": "^4.2.0",
     "typescript": "^5.0.2",
     "vite": "^5.0.0",
-    "vue-tsc": "^1.8.5"
+    "vue-tsc": "^1.8.5",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/node": "^18.19.3"
   }
 }

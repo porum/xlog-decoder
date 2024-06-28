@@ -69,8 +69,8 @@ const showInFolder = async () => {
 <template>
   <div class="item" @click="showInFolder">
     <div class="filename">{{ name }}</div>
-    <img src="../assets/ic_success.png" alt="" v-if="status === 0" />
-    <img src="../assets/ic_error.png" alt="" v-else-if="status !== 0 && status !== -1" />
+    <img src="@/assets/ic_success.png" alt="" v-if="status === 0" />
+    <img src="@/assets/ic_error.png" alt="" v-else-if="status !== 0 && status !== -1" />
   </div>
 </template>
 
@@ -78,27 +78,29 @@ const showInFolder = async () => {
 .item {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 8px 16px;
   box-sizing: border-box;
-}
 
-.filename {
-  color: white;
-  font-weight: bold;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-}
+  .filename {
+    flex: 1;
+    overflow-x: hidden;
+    color: white;
+    font-weight: bold;
+    white-space: normal;
+    word-wrap: break-word;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+  }
 
-img {
-  width: 32px;
-  height: 32px;
-  margin-left: 16px;
+  img {
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+  }
 }
 </style>

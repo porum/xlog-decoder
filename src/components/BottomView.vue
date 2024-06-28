@@ -20,8 +20,8 @@ const onTapFolder = async () => {
   <div class="bottom">
     <p class="copyright">© Sun Guobao</p>
     <div>
-      <img src="../assets/ic_folder.png" alt="" @click="onTapFolder" />
-      <img src="../assets/ic_settings.png" alt="" @click="onTapSetting" />
+      <img src="@/assets/ic_folder.png" alt="" @click="onTapFolder" />
+      <img src="@/assets/ic_settings.png" alt="" @click="onTapSetting" />
     </div>
   </div>
 </template>
@@ -29,8 +29,6 @@ const onTapFolder = async () => {
 <style scoped lang="less">
 
 .bottom {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   height: 48px;
   display: flex;

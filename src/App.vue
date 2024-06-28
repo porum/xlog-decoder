@@ -28,10 +28,8 @@ const closePreference = () => {
 
 <template>
   <div class="container">
-    <div class="content">
-      <!--error: paths.toReversed() is not a function. even if add `ESNext.Array` on tsconfig.json      -->
-      <list-view :paths="paths.slice().reverse()" />
-    </div>
+    <!--error: paths.toReversed() is not a function. even if add `ESNext.Array` on tsconfig.json      -->
+    <list-view :paths="paths.slice().reverse()" />
     <bottom-view @open-preference="openPreference" />
     <preference :show="showPreference" @done="closePreference" />
   </div>
@@ -39,17 +37,10 @@ const closePreference = () => {
 
 <style scoped lang="less">
 .container {
-  background-image: linear-gradient(to bottom, #4EA6D2, #3777B6);
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.content {
-  height: calc(100% - 48px);
   display: flex;
-  flex: 1;
-  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #4EA6D2, #3777B6);
+  overflow: hidden;
 }
 </style>
