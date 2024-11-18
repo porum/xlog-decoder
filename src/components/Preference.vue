@@ -66,43 +66,43 @@ const showOpenDialog = async () => {
   flex-direction: column;
   box-sizing: border-box;
   box-shadow: 0 2px 8px gray inset;
-}
 
-.item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: smaller;
-  white-space: nowrap;
+  .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: smaller;
+    white-space: nowrap;
 
-  span {
-    text-align: right;
-    width: 72px;
-    margin-right: 8px;
-    font-weight: 500;
-    max-lines: 1;
-    overflow: hidden;
+    span {
+      text-align: right;
+      width: 72px;
+      margin-right: 8px;
+      font-weight: 500;
+      max-lines: 1;
+      overflow: hidden;
+    }
+
+    input {
+      flex: 1;
+      height: 24px;
+      background: white;
+      outline: none;
+      border: 1px;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 4px;
+      margin: 0;
+    }
+
+    .action-btn {
+      margin-left: 8px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      text-align: center;
+    }
   }
-
-  input {
-    flex: 1;
-    height: 24px;
-    background: white;
-    outline: none;
-    border: 1px;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0 4px;
-    margin: 0;
-  }
-}
-
-.action-btn {
-  margin-left: 8px;
-  width: 24px;
-  height: 24px;
-  background: white;
-  text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {

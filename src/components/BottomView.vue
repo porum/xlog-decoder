@@ -39,18 +39,18 @@ const onTapFolder = async () => {
   padding-left: 16px;
   padding-right: 8px;
   box-sizing: border-box;
-}
 
-.copyright {
-  color: white;
-  font-size: xx-small;
-}
+  .copyright {
+    color: white;
+    font-size: xx-small;
+  }
 
-img {
-  width: 24px;
-  height: 24px;
-  padding: 0 8px;
-  pointer-events: auto;
+  img {
+    width: 24px;
+    height: 24px;
+    padding: 0 8px;
+    pointer-events: auto;
+  }
 }
 
 </style>
